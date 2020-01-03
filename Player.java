@@ -1,12 +1,11 @@
 import java.util.Scanner;
-
+import java.util.regex.Pattern;
 public class Player {
     private String name;
 
     public Player(String player_name) {
         this.name = player_name;
     }
-
     private Command openCell(String command) {
         char commadType = command.charAt(0);
         String[] locations = command.substring(2, command.length() - 1).split(",");
@@ -24,6 +23,8 @@ public class Player {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter Option ");
         String command = input.nextLine();
+        if(!Pattern.matches("[of][(][\\d][,][\\d][)]",command))
+            return null;
         switch(command.charAt(0)) {
         case 'f':
             return this.flagCell(command);
