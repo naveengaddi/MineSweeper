@@ -54,6 +54,7 @@ public class MineField {
     }
 
     public void displayMineField() {
+        System.out.println("------Minefield------");
         for(int i = 0; i < this.size; ++i) {
             for(int j = 0; j < this.size; ++j) {
                 System.out.print(this.cells_display_to_player[i][j].getValue());
