@@ -1,3 +1,4 @@
+
 public class Command {
     private char commadType;
     private int rowNumber;
